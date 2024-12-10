@@ -20,13 +20,13 @@ $statement = $pdo->prepare("SELECT * FROM posts");
 
 $statement->execute();
 
-$posts = $statement->fetchAll();
+$posts = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-dd($posts);
+//dd($posts[0]["content"]);
+echo"<ul>";
+foreach($posts as $pos)
+{
+    echo "<li>" . $pos ["content"] . "</;i>";
+}
+echo"</ul>";
 
-function dd($data){
-    echo"<pre>";
-    var_dump($data);
-    echo"</pre>";
-    die();
-};
