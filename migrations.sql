@@ -12,4 +12,6 @@ content VARCHAR(5200) );
  ("skibidi toilet"),
  ("tresais ieraksts"); 
  
- SELECT * FROM posts;
+  SELECT * FROM posts;
+ SELECT content LIKE "sk%";
+ 
