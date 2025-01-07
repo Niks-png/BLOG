@@ -25,7 +25,7 @@ echo"<input name='serch_query' />";
 echo"<button>poga</button>";
 echo"</form>";
 
-if(count ($posts)==0){
+if(count ($post)==0){
 echo"nav atrasts";
 }
 
