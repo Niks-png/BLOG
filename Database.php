@@ -14,11 +14,11 @@ class Database{
         }
 
 
- public function query($sql) {
+ public function query($sql, $c_ram) {
         
         $statement = $this->pdo->prepare($sql);
 
-        $statement->execute();
+        $statement->execute($c_ram);
         return $statement;
     }
 }
