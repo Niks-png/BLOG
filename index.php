@@ -2,6 +2,7 @@
 
 require "Database.php";
 require "function.php";
+
 $config=require("config.php");
 //Merkis uztaisit filtru 
 //izvaidot meklesanas joslu kurai ir submit poga
@@ -9,31 +10,19 @@ $config=require("config.php");
 //atgriest datus no sql datu bazes
 // dd("SELECT * FROM posts WHERE content LIKE '%" . $_GET["serch_query"] . "%';" );
 $db = new Database($config["database"]);
-
+$c_ram=[];
 $select ="SELECT * FROM posts";
  if(isset($_GET["serch_query"]) && $_GET["serch_query"] !=""){
      echo"atgriest ierakstus";
      $serch_query= "%" . $_GET["serch_query"] . "%";
-     $select .= " WHERE content LIKE :nosaukums";
-     $c_ram = ["nosaukums"=>$serch_query]; 
+     $select .= " WHERE content LIKE :nosaukums"; //sagatavo vaicajumus
+     $c_ram = ["nosaukums"=>$serch_query]; //parametrs
 }
-              $posts = $db->query($select, $c_ram)->fetchAll();;
+              $posts = $db->query($select, $c_ram)->fetchAll();
+require "views/index.view.php";
 
-echo"<h1>Blogs</h1>";
-echo"<form >";
-echo"<input name='serch_query' />";
-echo"<button>poga</button>";
-echo"</form>";
 
-if(count ($post)==0){
-echo"nav atrasts";
-}
 
-//dd($posts[0]["content"]);
-echo"<ul>";
-foreach($posts as $pos){
-        echo "<li>" . $pos ["content"] . "</;i>";
+$y = isset($x) ? $x : "nav vertibas";
 
-    }
-echo"</ul>";
-
+$y = $x ?? "nav vertibas";

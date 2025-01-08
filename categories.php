@@ -39,6 +39,7 @@ echo "<li>" . $pos ["category_name"] . "</;i>";
 
 }
 echo"</ul>";
+require "categories.view.php"
 ?>
             </body>
 </html>
