@@ -1,0 +1,19 @@
+header{
+    border-bottom-color: aquamarine 2px solid;
+    box-shadow: black 7px 0px 10px;
+    
+}
+header ul{
+    margin: 0;
+    display:flex;
+    gap:20px;
+    list-style-type: none;
+
+}
+header ul li{
+    padding:7px 15px;
+}
+body{
+    margin: 0;
+    padding:0;
+}
