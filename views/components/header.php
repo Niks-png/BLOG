@@ -6,6 +6,6 @@
     <title><?= $pagetitle ?? "skib" ?></title>
     <link rel="stylesheet" href="<?=$style ?? ""?>">
     <link rel="stylesheet" href="css/kope-style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
+    
 </head>
 <body>

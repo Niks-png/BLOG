@@ -1,9 +1,9 @@
 <?php
 
-require "Database.php";
 
 
-$config=require("config.php");
+
+
 //Merkis uztaisit filtru 
 //izvaidot meklesanas joslu kurai ir submit poga
 //sarakstit php

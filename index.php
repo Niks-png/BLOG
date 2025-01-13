@@ -2,6 +2,9 @@
 require "function.php";
 require "Database.php";
 require "config.php";
-require "router.php";
+
+
+$config=require("config.php");
 $db = new Database($config["database"]);
-if($)
+require "router.php";
+?>
