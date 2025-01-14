@@ -1,21 +1,17 @@
+
 <?php
+
+
+
 $uri = parse_url($_SERVER["REQUEST_URI"])["path"];
-http_response_code(404);
-if($uri == "/") {
+$routes =require("routes.php");
+if(array_key_exists($uri, $routes)) {
 
-    require "controler/index.php";
+     require $routes[$uri];
 
-}
-elseif ($uri == "/about") {
-
-    require "controler/story.php";
-
-}elseif ($uri =="/categories") {
-    require "controler/categories.php";
 }
 else{
-
     http_response_code(404);
-    echo "Atvainojiet, lapa netika atrasta!";
+    require "controllers/404.php";
     die();
 }
