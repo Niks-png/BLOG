@@ -21,7 +21,7 @@ $select ="SELECT * FROM posts";
               $posts = $db->query($select, $c_ram)->fetchAll();
               $style="css/style1.css";
  $pagetitle="BLOGS";
-require "views/index.view.php";
+require "views/posts/index.view.php";
 
 
 
