@@ -2,20 +2,25 @@
 <?php
 
 
-$config=require("config.php");
+
+$select = "SELECT * FROM categories";
+$params = [];
+if(isset($_GET["search_query"]) && $_GET["search_query"] != "" ) {
+    echo"atgriest ierakstus";
 
 
-$c_ram = []; 
-$db = new Database($config["database"]);
-$select ="SELECT * FROM categories";
-if(isset($_GET["serch_query"]) && $_GET["serch_query"] !=""){
-        $serch_query= "%" . $_GET["serch_query"] . "%";
-        $select .= " WHERE category_name  LIKE :nosaukums";
-        $c_ram = ["nosaukums"=>$serch_query]; 
+
+    $search_query = "%" . $_GET["search_query"] . "%";
+    $select .= " WHERE category_name LIKE :nosaukums "; // sagatavotais vaicājums
+    $params = ["nosaukums" => $search_query]; // pats parametrs
+
 }
-                $posts = $db->query($select, $c_ram)->fetchAll();;
-echo"</ul>";
-$style="css/style1.css";
-$pagetitle="idk";
+$posts = $db->query($select, $params)->fetchALL();
+
+$pagetitle = "CategorieS";
 require "views/categories.view.php";
+
 ?>
+    
+</body>
+</html>

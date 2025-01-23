@@ -1,15 +1,15 @@
 <?php
 
 if (!isset($_GET["id"]) || $_GET["id"] == ""){
-  redirectIfNotFound();
+    redirectIfNotFound();
 }
 
-$sql = "SELECT * FROM posts WHERE id = :id";
-$params = ["id" => $_GET["id"]];
-$post = $db->query($sql, $params)->fetch();
+        $sql = "SELECT * FROM posts WHERE id = :id";
+        $params = ["id" => $_GET["id"]];
+        $post = $db->query($sql, $params)->fetch();
 
-if (!$post){
-    redirectIfNotFound();
+if (!$post) {
+        redirectIfNotFound();
 }
 
 require "views/posts/show.view.php";

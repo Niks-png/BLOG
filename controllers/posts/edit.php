@@ -4,7 +4,9 @@ require "Validator.php";
 
 
 $errors = [];
-
+if (!isset($_GET ["id"])){
+    echo"nav padots id";
+}
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -18,14 +20,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($errors)){
         
         $params = ["content" => $_POST["content"]];
-        $sql = "INSERT INTO posts (content) VALUES (:content)";
+        $sql = "INSERT INTO posts (content)  WHERE id = :id (:content)";
+        $sql = "UPDATE posts 
+          SET content = content"
+      
         $post = $db->query($sql, $params)->fetch();
         header("Location: /");
        
     }
     
 }
-    
 
 
-require "views/posts/create.view.php";
+
+require "views/posts/edit.view.php";

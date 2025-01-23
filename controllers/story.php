@@ -1,5 +1,5 @@
 <?php
-$title="skib";
-$pagetitle="some";
-$style="css/style1.css";
+$title="story";
+$pagetitle = "story";
+$style = "css/style1.css";
 require "views/story.view.php";

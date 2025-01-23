@@ -1,24 +1,32 @@
-<?php require"views/components/header.php" ?>
-<?php require"views/components/navbar.php" ?>
+
+<?php require "views/components/header.php" ?>
+<?php require "views/components/navbar.php" ?>
+
+
 
 
 <h1>Blogs</h1>
 
-<form >
-<input name='serch_query' value='<?= $_GET["serch_query"] ??""?>'/>
-<button>poga</button>
+<form>
+
+<input name='search_query' value='<?= $_GET["search_query"] ?? "" ?>'/>
+<button>Search</button>
+
+
+
 </form>
 
-<?php if(count($posts)==0){ ?>
-<p>nav atrasts</p>
+<?php if(count($posts) == 0 ){ ?>
+<p> L bozo </p>
 <?php } ?>
 
 <ul>
-<?php foreach($posts as $pos){ ?>
-        <li><a href="show?id= <?= $pos["id"] ?>"> <?=htmlspecialchars( $pos["content"]) ?></a> </li>
+<?php foreach($posts as $post){ ?>
+    <li><a href="show?id= <?= $post["id"] ?>"> <?= htmlspecialchars($post["content"]) ?> </a> </li>
 <?php } ?>
 </ul>
-<?php require"views/components/footer.php"?>
+
+<?php require "views/components/footer.php" ?>
 
 </body>
 </html>
