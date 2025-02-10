@@ -18,3 +18,4 @@ class Validator {
                && $value <= $max;
     }
 }
+?>
