@@ -12,8 +12,6 @@
 <input name='search_query' value='<?= $_GET["search_query"] ?? "" ?>'/>
 <button>Search</button>
 
-
-
 </form>
 
 <?php if(count($posts) == 0 ){ ?>
@@ -22,7 +20,7 @@
 
 <ul>
 <?php foreach($posts as $post){ ?>
-    <li><a href="show?id= <?= $post["id"] ?>"> <?= htmlspecialchars($post["content"]) ?> </a> </li>
+    <li><a href="show?id=<?= $post["id"] ?>"> <?= htmlspecialchars($post["content"]) ?> </a> </li>
 <?php } ?>
 </ul>
 

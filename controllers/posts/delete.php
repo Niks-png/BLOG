@@ -1,8 +1,14 @@
 <?php
-if(isset($_GET["id"])){
-    $sql = "SELECT * FROM posts
+require "Validator.php";
+if (Validator::number ($_POST["id"])){
+}
+if(isset($_POST["id"])){
+    $sql = "DELETE FROM posts
             WHERE id = :id";
 
-    $params = ["id" => $_GET["id"]];
+    $params = ["id" => $_POST["id"]];
     $post = $db->query($sql, $params)->fetch();
+    header("location: /");
 }
+
+$errors=[];

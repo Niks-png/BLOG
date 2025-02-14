@@ -14,6 +14,8 @@
               <p><?= $errors["content"] ?></p>
             <?php } ?>
 
+
+
 <?php require "views/components/footer.php" ?>
 
 </body>

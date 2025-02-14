@@ -8,4 +8,10 @@ return[
     "/create"=>"controllers/posts/create.php",
     "/edit"=>"controllers/posts/edit.php",
     "/delete"=>"controllers/posts/delete.php",
+ //categories
+"/" =>"controller/categories/index.php",
+"/create" =>"controller/categories/create.php",
+"/show" =>"controller/categories/show.php",
+"/edit" => "controller/categories/edit.php",
+"/delete" => "controller/categories/delete.php",
 ];
