@@ -1,17 +1,18 @@
 <?php
 
-return[
+return [
     "/" => "controllers/posts/index.php",
     "/about" => "controllers/story.php",
     "/show" => "controllers/posts/show.php",
-    "/categories"=>"controllers/categories.php",
-    "/create"=>"controllers/posts/create.php",
-    "/edit"=>"controllers/posts/edit.php",
-    "/delete"=>"controllers/posts/delete.php",
- //categories
-"/" =>"controller/categories/index.php",
-"/create" =>"controller/categories/create.php",
-"/show" =>"controller/categories/show.php",
-"/edit" => "controller/categories/edit.php",
-"/delete" => "controller/categories/delete.php",
+    "/create" => "controllers/posts/create.php",
+    "/edit" => "controllers/posts/edit.php",
+    "/delete" => "controllers/posts/delete.php",
+
+//categories
+
+    "/categories/" => "controllers/categories/index.php",
+    "/categories/create" => "controllers/categories/create.php",
+    "/categories/show" => "controllers/categories/show.php",
+    "/categories/edit" => "controllers/categories/edit.php",
+    "/categories/delete" => "controllers/categories/delete.php",
 ];
