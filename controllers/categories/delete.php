@@ -8,7 +8,7 @@ if(isset($_POST["id"])){
 
     $params = ["id" => $_POST["id"]];
     $post = $db->query($sql, $params)->fetch();
-    header("location: /categories");
+    header("location: /categories/");
 }
 
 $errors=[];

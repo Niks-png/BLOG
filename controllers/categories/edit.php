@@ -1,12 +1,13 @@
 <?php
 require "validator.php";
 if(isset($_GET["id"])){
+
+
     $sql = "SELECT * FROM categories
             WHERE id = :id";
-
     $params = ["id" => $_GET["id"]];
     $post = $db->query($sql, $params)->fetch();
-    
+   
 }
 $errors = [];
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -18,12 +19,12 @@ $errors = [];
             if (empty($errors)){
         
                 $params = ["id" => $_POST["id"], "category_name" => $_POST["category_name"]];
-                $sql = "UPDATE category_name
+                $sql = "UPDATE categories
                         SET category_name = :category_name
                         WHERE id = :id";
                         
                 $post = $db->query($sql, $params)->fetch();
-                header("Location: /show?id=".$_POST["id"]);
+                header("Location: /categories/show?id=".$_POST["id"]);
                 exit();
             }
         }

@@ -6,12 +6,12 @@
 <h1>edito bloga ierakstu</h1>
     <form method="POST">
         <label><input type="hidden" name="id"  value="<?= $post['id'] ?? "" ?>" /></label>  
-        <label><input  name="content"  value="<?= $_POST['content'] ?? $post['content'] ?? "" ?>" /></label>  
+        <label><input  name="category_name"  value="<?= $_POST['category_name'] ?? $post['category_name'] ?? "" ?>" /></label>  
         <button>edit</button>
     </form>
 
-            <?php if(isset($errors["content"])) { ?>
-              <p><?= $errors["content"] ?></p>
+            <?php if(isset($errors["category_name"])) { ?>
+              <p><?= $errors["category_name"] ?></p>
             <?php } ?>
 
 
